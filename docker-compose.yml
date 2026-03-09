@@ -1,0 +1,11 @@
+services:
+  cloudflare-mcp:
+    build: .
+    container_name: cloudflare-mcp
+    ports:
+      - "3011:3011"
+    env_file:
+      - .env
+    environment:
+      - HTTP_PORT=3011
+    restart: unless-stopped
