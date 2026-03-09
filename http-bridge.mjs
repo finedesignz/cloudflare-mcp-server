@@ -114,7 +114,7 @@ const server = http.createServer(async (req, res) => {
       return;
     }
 
-    const toolMatch = url.pathname.match(/^\\/tools\\/(.+)$/);
+    const toolMatch = url.pathname.match(/^\/tools\/(.+)$/);
     if (req.method === "POST" && toolMatch) {
       const toolName = decodeURIComponent(toolMatch[1]);
       const body = await readBody(req);
